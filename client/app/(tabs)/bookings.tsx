@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ScrollView, Text, View } from "react-native";
+
 import { Skeleton } from "~/components/ui/skeleton";
 
 export default function Bookings() {

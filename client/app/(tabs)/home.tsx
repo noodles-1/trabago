@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Image, ScrollView, Text, TextInput, View } from "react-native";
 
+import { useRouter } from "expo-router";
+import { LinearGradient } from "expo-linear-gradient";
+
 import Feather from "@expo/vector-icons/Feather";
 import AntDesign from "@expo/vector-icons/AntDesign";
+
 import { Button } from "~/components/ui/button";
-import { useRouter } from "expo-router";
 import { Skeleton } from "~/components/ui/skeleton";
 
 export default function Home() {
@@ -48,7 +51,13 @@ export default function Home() {
                     <Image source={require("~/assets/images/trabago-logo.png")} className="h-12 w-12" />
                     <Text className="text-2xl text-primary font-bold"> Home </Text>
                 </View>
-                <View className="p-6 bg-primary rounded-lg mx-6 my-1 flex flex-col gap-3">
+                <LinearGradient 
+                    className="p-6 bg-primary mx-6 my-1 flex flex-col gap-3"
+                    colors={["#214f98", "#6090dc"]}
+                    start={{ x: 0, y: 1 }}
+                    end={{ x: 1, y: 0 }}
+                    style={{ borderRadius: 6 }}
+                >
                     <Text className="text-white font-semibold"> España Blvd, Sampaloc, Manila </Text>
                     <View className="flex flex-row items-center bg-white px-4 py-2 gap-4 rounded-xl">
                         <Feather name="search" size={20} color="#666" />
@@ -60,7 +69,7 @@ export default function Home() {
                             underlineColorAndroid="transparent"
                         />
                     </View>
-                </View>
+                </LinearGradient>
                 <View className="m-6">
                     {loading ?
                         <>
@@ -96,12 +105,18 @@ export default function Home() {
                     <View className="flex flex-row justify-between mt-2">
                         {categories.map((category, idx) => (
                             <View key={idx}>
-                                <View className="bg-primary rounded-lg p-6">
+                                <LinearGradient 
+                                    className="bg-primary p-6"
+                                    colors={["#214f98", "#6090dc"]}
+                                    start={{ x: 0, y: 1 }}
+                                    end={{ x: 1, y: 0 }}
+                                    style={{ borderRadius: 6 }}
+                                >
                                     <Image 
                                         source={category.icon} 
                                         className="h-12 w-12" 
                                     />
-                                </View>
+                                </LinearGradient>
                                 <Text className="text-center mt-1"> {category.name} </Text>
                             </View>
                         ))}
