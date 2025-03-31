@@ -63,7 +63,7 @@ export default function Services() {
 
     return (
         <>
-            <Header title="Services" />
+            <Header title="All services" />
             <ScrollView className="flex-1 px-2">
                 <View className="mt-4">
                     <Text className="text-lg mx-2"> Home </Text>
