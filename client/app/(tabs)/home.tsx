@@ -121,7 +121,12 @@ export default function Home() {
                         {services.map((service, idx) => (
                             <View key={idx}>
                                 <Pressable
-                                    onPress={() => router.navigate("/services")}
+                                    onPress={() => router.navigate({
+                                        pathname: "/services/[service]",
+                                        params: {
+                                            service: service.name
+                                        }
+                                    })}
                                     android_ripple={{
                                         foreground: true,
                                         color: "rgba(255, 255, 255, 0.3)",

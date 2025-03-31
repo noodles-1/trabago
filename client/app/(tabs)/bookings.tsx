@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ScrollView, Text, View } from "react-native";
 
 import { Skeleton } from "~/components/ui/skeleton";
+import Header from "~/components/custom/header";
 
 export default function Bookings() {
     const [loading, setLoading] = useState<boolean>(true);
@@ -33,9 +34,7 @@ export default function Bookings() {
 
     return (
         <>
-            <View className="fixed top-0 left-0 right-0 flex flex-row items-center px-4 pt-10 pb-4 border-b-[1px] border-b-gray-200">
-                <Text className="text-xl text-primary font-bold"> Your bookings </Text>
-            </View>
+            <Header title="Your bookings" />
             <ScrollView className="flex-1">
                 <View className="m-4">
                     {loading ? 
