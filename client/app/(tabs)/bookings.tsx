@@ -34,7 +34,7 @@ export default function Bookings() {
 
     return (
         <>
-            <Header title="Your bookings" />
+            <Header title="My bookings" />
             <ScrollView className="flex-1">
                 <View className="m-4">
                     {loading ? 
@@ -45,7 +45,7 @@ export default function Bookings() {
                     :
                         <>
                             <Text className="text-lg"> Current bookings </Text>
-                            <View className="mt-2 flex flex-col gap-5">
+                            <View className="mt-2 flex flex-col gap-5 bg-white">
                                 <View className="rounded-lg border-[1px] border-gray-300 flex flex-row h-[80px]">
                                     <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
                                     <View className="p-2 flex-1">
@@ -71,7 +71,7 @@ export default function Bookings() {
                             <Text className="text-lg"> Bookings this month </Text>
                             <View className="mt-2 flex flex-col gap-5">
                                 {bookings.map((booking, idx) => (
-                                    <View key={idx} className="rounded-lg border-[1px] border-gray-300 flex flex-row h-[80px]">
+                                    <View key={idx} className="rounded-lg border-[1px] bg-white border-gray-300 flex flex-row h-[80px]">
                                         <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
                                         <View className="p-2 flex-1">
                                             <Text className="font-semibold"> {booking.service} </Text>

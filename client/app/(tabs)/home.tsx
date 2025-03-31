@@ -34,7 +34,7 @@ export default function Home() {
         },
         {
             name: "Taxi",
-            icon: require("~/assets/images/ride-hailing.png")
+            icon: require("~/assets/images/taxi.png")
         },
         {
             name: "Repair",
@@ -46,12 +46,12 @@ export default function Home() {
         <>
             <View className="absolute top-0 left-0 right-0 z-10 bg-white h-8" />
             <ScrollView className="flex-1">
-                <View className="flex flex-row items-center px-4 pt-8 pb-2">
+                <View className="flex flex-row items-center px-2 pt-8 pb-2">
                     <Image source={require("~/assets/images/trabago-logo.png")} className="h-12 w-12" />
                     <Text className="text-2xl text-primary font-bold"> Home </Text>
                 </View>
                 <LinearGradient 
-                    className="p-6 bg-primary mx-6 my-1 flex flex-col gap-3"
+                    className="p-6 bg-primary mx-4 my-1 flex flex-col gap-3"
                     colors={["#214f98", "#6090dc"]}
                     start={{ x: 0, y: 1 }}
                     end={{ x: 1, y: 0 }}
@@ -69,7 +69,7 @@ export default function Home() {
                         />
                     </View>
                 </LinearGradient>
-                <View className="m-6">
+                <View className="m-4">
                     {loading ?
                         <>
                             <Skeleton className="w-[50%] h-5 rounded-full bg-gray-300" />
@@ -102,7 +102,7 @@ export default function Home() {
                         </>
                     }
                 </View>
-                <View className="m-6">
+                <View className="m-4">
                     <View className="flex flex-row items-center justify-between gap-4">
                         <Text className="text-lg font-semibold"> Popular services </Text>
                         <Pressable 
@@ -150,7 +150,7 @@ export default function Home() {
                         ))}
                     </View>
                 </View>
-                <View className="m-6">
+                <View className="m-4">
                     {loading ?
                         <>
                             <Skeleton className="w-[20%] h-5 rounded-full bg-gray-300" />

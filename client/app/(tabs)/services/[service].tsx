@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Pressable, ScrollView, Text, View } from "react-native";
+import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
 
 import { useLocalSearchParams, useRouter } from "expo-router";
 
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Octicon from "@expo/vector-icons/Octicons";
+import Feather from "@expo/vector-icons/Feather";
 
 import { Skeleton } from "~/components/ui/skeleton";
 import Header from "~/components/custom/header";
@@ -12,18 +13,33 @@ import Pill from "~/components/custom/pill";
 
 export default function ServicesList() {
     const router = useRouter();
-    const { service } = useLocalSearchParams();
+    const { service } = useLocalSearchParams<{ service: string }>();
 
+    const [value, setValue] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(true);
     
     useEffect(() => {
         setTimeout(() => setLoading(false), 1000);
     }, []);
 
+    const onChangeText = (text: string) => {
+        setValue(text);
+    };
+
     return (
         <>
             <Header title={`${service} services`} backButton />
             <ScrollView className="flex-1 px-2">
+                <View className="flex flex-row items-center bg-white px-4 py-2 gap-4 rounded-xl border-[1px] border-gray-500 mx-2 mt-4">
+                    <Feather name="search" size={20} color="#666" />
+                    <TextInput 
+                        placeholder={`Search for ${service.toLowerCase()} services`}
+                        value={value}
+                        onChangeText={onChangeText}
+                        className="p-0"
+                        underlineColorAndroid="transparent"
+                    />
+                </View>
                 <View className="mx-2 my-4 flex flex-row gap-2">
                     <Pill 
                         text="Sort" 
@@ -67,7 +83,7 @@ export default function ServicesList() {
                                                 borderless: true
                                             }}
                                         >
-                                            <View className="flex flex-col rounded-lg border-gray-400 border-[1px]">
+                                            <View className="flex flex-col rounded-lg border-gray-400 border-[1px] bg-white">
                                                 <View className="bg-gray-300 h-[150px] w-full" />
                                                 <View className="p-2">
                                                     <Text> Service #{idx + 1} </Text>
