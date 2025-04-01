@@ -63,6 +63,15 @@ export default function TabLayout() {
                     ),
                 }}
             />
+            <MaterialTopTabs.Screen
+                name="bookings"
+                options={{
+                    title: "Bookings",
+                    tabBarIcon: ({ color }) => (
+                        <Feather name="book" size={24} color={color} />
+                    ),
+                }}
+            />
         </MaterialTopTabs>
     );
 }

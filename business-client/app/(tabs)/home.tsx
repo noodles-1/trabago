@@ -17,7 +17,7 @@ export default function Home() {
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
-        setTimeout(() => setLoading(false), 1);
+        setTimeout(() => setLoading(false), 3000);
     }, []);
 
     const onChangeText = (text: string) => {
@@ -43,9 +43,13 @@ export default function Home() {
                         TODAY'S EARNINGS 
                     </Text>
                     <View className="flex flex-row justify-between items-center">
-                        <Text className="text-white font-bold tracking-[2px] text-4xl">
-                            ₱ 2,500.00
-                        </Text>
+                        {loading ?
+                            <Skeleton className="h-[30px] w-[150px] bg-gray-300" />
+                        :
+                            <Text className="text-white font-bold tracking-[2px] text-4xl">
+                                ₱ 2,500.00
+                            </Text>
+                        }
                         <View className="bg-white shadow-compact rounded-full items-center overflow-hidden">
                             <Pressable
                                 className="py-3 px-4 flex flex-row gap-2"
@@ -76,9 +80,13 @@ export default function Home() {
                             <Text className="tracking-[3px] font-semibold text-[10px]">
                                 TODAY'S BOOKINGS
                             </Text>
-                            <Text className="font-bold tracking-[2px] text-2xl">
-                                4
-                            </Text>
+                            {loading ?
+                                <Skeleton className="h-[30px] w-[30px] bg-gray-300" />
+                            :
+                                <Text className="font-bold tracking-[2px] text-2xl">
+                                    4
+                                </Text>
+                            }
                         </Pressable>
                     </View>
                     <View className="h-full border-gray-300 rounded-lg border-[1px] overflow-hidden flex-1">
@@ -93,9 +101,13 @@ export default function Home() {
                             <Text className="tracking-[3px] font-semibold text-[10px]">
                                 GO-CASH BALANCE
                             </Text>
-                            <Text className="font-bold tracking-wider text-2xl">
-                                ₱ 18,250.00
-                            </Text>
+                            {loading ?
+                                <Skeleton className="h-[30px] w-[120px] bg-gray-300" />
+                            :
+                                <Text className="font-bold tracking-wider text-2xl">
+                                    ₱ 18,250.00
+                                </Text>
+                            }
                         </Pressable>
                     </View>
                 </View>
@@ -111,7 +123,7 @@ export default function Home() {
                                 <Text className="text-lg font-semibold"> Ongoing bookings </Text>
                                 <Pressable 
                                     className="rounded-full p-2" 
-                                    onPress={() => {}}
+                                    onPress={() => router.navigate("/bookings")}
                                     android_ripple={{
                                         foreground: true,
                                         color: "#bbb",
@@ -123,12 +135,12 @@ export default function Home() {
                             </View>
                             <ScrollView horizontal>
                                 <View className="flex flex-row gap-2">
-                                    {Array.from({ length: 3 }).map((_, i) => 
+                                    {Array.from({ length: 1 }).map((_, i) => 
                                         <View key={i} className="rounded-lg border-[1px] border-gray-300 flex flex-row my-2 w-[250px]">
                                             <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
                                             <View className="p-3 flex-1">
                                                 <Text className="font-semibold"> 
-                                                    Cleaning service 
+                                                    Software service 
                                                 </Text>
                                                 <View className="flex flex-row gap-1">
                                                     <Text>
@@ -138,9 +150,14 @@ export default function Home() {
                                                         Juan Dela Cruz
                                                     </Text>
                                                 </View>
-                                                <Text className="text-right font-semibold mt-2"> 
-                                                    ₱440 
-                                                </Text>
+                                                <View className="flex flex-row gap-1 mt-3">
+                                                    <Text>
+                                                        Payment:
+                                                    </Text>
+                                                    <Text className="font-semibold"> 
+                                                        ₱ 440 
+                                                    </Text>
+                                                </View>
                                             </View>
                                         </View>
                                     )}
@@ -150,34 +167,18 @@ export default function Home() {
                     }
                 </View>
                 <View className="m-4">
-                    <View className="flex flex-row items-center justify-between gap-4">
-                        <Text className="text-lg font-semibold"> Popular services </Text>
-                        <Pressable 
-                            className="rounded-full p-2" 
-                            onPress={() => {}}
-                            android_ripple={{
-                                foreground: true,
-                                color: "#bbb",
-                                borderless: true
-                            }}
-                        >
-                            <AntDesign name="right" size={16} color="#4676c0" />
-                        </Pressable>
-                    </View>
-                </View>
-                <View className="m-4">
                     {loading ?
                         <>
-                            <Skeleton className="w-[20%] h-5 rounded-full bg-gray-300" />
-                            <Skeleton className="w-full h-[150px] rounded-lg bg-gray-300 mt-4" />
+                            <Skeleton className="w-[50%] h-5 rounded-full bg-gray-300" />
+                            <Skeleton className="w-full h-[100px] rounded-lg bg-gray-300 mt-4" />
                         </> 
                     :
                         <>
                             <View className="flex flex-row items-center justify-between gap-4">
-                                <Text className="text-lg font-semibold"> Featured </Text>
+                                <Text className="text-lg font-semibold"> Accepted bookings </Text>
                                 <Pressable 
                                     className="rounded-full p-2" 
-                                    onPress={() => {}}
+                                    onPress={() => router.navigate("/bookings")}
                                     android_ripple={{
                                         foreground: true,
                                         color: "#bbb",
@@ -187,10 +188,36 @@ export default function Home() {
                                     <AntDesign name="right" size={16} color="#4676c0" />
                                 </Pressable>
                             </View>
-                            <View className="mt-2 mb-10">
-                                <View className="rounded-lg w-[280px] h-[180px] bg-gray-300" />
-                                <Text className="mt-1 font-semibold"> Promote your service/business here </Text>
-                            </View>
+                            <ScrollView horizontal>
+                                <View className="flex flex-row gap-2">
+                                    {Array.from({ length: 2 }).map((_, i) => 
+                                        <View key={i} className="rounded-lg border-[1px] border-gray-300 flex flex-row my-2 w-[250px]">
+                                            <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
+                                            <View className="p-3 flex-1">
+                                                <Text className="font-semibold"> 
+                                                    Design service 
+                                                </Text>
+                                                <View className="flex flex-row gap-1">
+                                                    <Text>
+                                                        Client: 
+                                                    </Text>
+                                                    <Text className="font-semibold">
+                                                        Juan Dela Cruz
+                                                    </Text>
+                                                </View>
+                                                <View className="flex flex-row gap-1 mt-3">
+                                                    <Text>
+                                                        Payment:
+                                                    </Text>
+                                                    <Text className="font-semibold"> 
+                                                        ₱ 720 
+                                                    </Text>
+                                                </View>
+                                            </View>
+                                        </View>
+                                    )}
+                                </View>
+                            </ScrollView>
                         </>
                     }
                 </View>
