@@ -14,7 +14,7 @@ const Header = ({
     const router = useRouter();
     
     return (
-        <View className="fixed top-0 left-0 right-0 flex flex-row items-center gap-2 px-4 pt-10 pb-4 border-b-[1px] border-b-gray-200">
+        <View className="fixed top-0 left-0 right-0 flex flex-row items-center gap-2 px-4 pt-12 pb-4 border-gray-300 border-[1px]">
             {backButton && 
                 <Pressable 
                     className="rounded-full p-1" 

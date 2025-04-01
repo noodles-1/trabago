@@ -18,9 +18,9 @@ export default function Main() {
                 />
                 <View className="flex flex-row gap-[4px]">
                     <Text className="text-lg tracking-wider">
-                        for
+                        For
                     </Text>
-                    <Text className="text-lg text-primary font-semibold tracking-wider">
+                    <Text className="text-lg text-primary font-bold tracking-wider">
                         Business
                     </Text>
                 </View>

@@ -28,7 +28,7 @@ export default function Home() {
         <>
             <View className="absolute top-0 left-0 right-0 z-10 bg-white h-8" />
             <ScrollView className="flex-1">
-                <View className="flex flex-row items-center px-2 pt-8 pb-2">
+                <View className="flex flex-row items-center px-2 pt-10 pb-2">
                     <Image source={require("~/assets/images/trabago-logo.png")} className="h-12 w-12" />
                     <Text className="text-2xl text-primary font-bold"> Home </Text>
                 </View>
@@ -39,7 +39,7 @@ export default function Home() {
                     end={{ x: 1, y: 0 }}
                     style={{ borderRadius: 6 }}
                 >
-                    <Text className="text-white font-semibold tracking-[3px] text-[10px] opacity-90"> 
+                    <Text className="text-white font-bold tracking-[3px] text-[10px] opacity-90"> 
                         TODAY'S EARNINGS 
                     </Text>
                     <View className="flex flex-row justify-between items-center">
@@ -77,7 +77,7 @@ export default function Home() {
                                 borderless: true
                             }}
                         >
-                            <Text className="tracking-[3px] font-semibold text-[10px]">
+                            <Text className="tracking-[3px] font-bold text-[10px]">
                                 TODAY'S BOOKINGS
                             </Text>
                             {loading ?
@@ -98,7 +98,7 @@ export default function Home() {
                                 borderless: true
                             }}
                         >
-                            <Text className="tracking-[3px] font-semibold text-[10px]">
+                            <Text className="tracking-[3px] font-bold text-[10px]">
                                 GO-CASH BALANCE
                             </Text>
                             {loading ?
@@ -120,7 +120,7 @@ export default function Home() {
                     :
                         <>
                             <View className="flex flex-row items-center justify-between gap-4">
-                                <Text className="text-lg font-semibold"> Ongoing bookings </Text>
+                                <Text className="text-lg font-bold"> Ongoing bookings </Text>
                                 <Pressable 
                                     className="rounded-full p-2" 
                                     onPress={() => router.navigate("/bookings")}
@@ -139,22 +139,22 @@ export default function Home() {
                                         <View key={i} className="rounded-lg border-[1px] border-gray-300 flex flex-row my-2 w-[250px]">
                                             <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
                                             <View className="p-3 flex-1">
-                                                <Text className="font-semibold"> 
+                                                <Text className="font-bold"> 
                                                     Software service 
                                                 </Text>
                                                 <View className="flex flex-row gap-1">
                                                     <Text>
                                                         Client: 
                                                     </Text>
-                                                    <Text className="font-semibold">
+                                                    <Text className="font-bold">
                                                         Juan Dela Cruz
                                                     </Text>
                                                 </View>
                                                 <View className="flex flex-row gap-1 mt-3">
                                                     <Text>
-                                                        Payment:
+                                                        To earn:
                                                     </Text>
-                                                    <Text className="font-semibold"> 
+                                                    <Text className="font-bold"> 
                                                         ₱ 440 
                                                     </Text>
                                                 </View>
@@ -175,7 +175,7 @@ export default function Home() {
                     :
                         <>
                             <View className="flex flex-row items-center justify-between gap-4">
-                                <Text className="text-lg font-semibold"> Accepted bookings </Text>
+                                <Text className="text-lg font-bold"> Accepted bookings </Text>
                                 <Pressable 
                                     className="rounded-full p-2" 
                                     onPress={() => router.navigate("/bookings")}
@@ -194,22 +194,22 @@ export default function Home() {
                                         <View key={i} className="rounded-lg border-[1px] border-gray-300 flex flex-row my-2 w-[250px]">
                                             <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
                                             <View className="p-3 flex-1">
-                                                <Text className="font-semibold"> 
+                                                <Text className="font-bold"> 
                                                     Design service 
                                                 </Text>
                                                 <View className="flex flex-row gap-1">
                                                     <Text>
                                                         Client: 
                                                     </Text>
-                                                    <Text className="font-semibold">
+                                                    <Text className="font-bold">
                                                         Juan Dela Cruz
                                                     </Text>
                                                 </View>
                                                 <View className="flex flex-row gap-1 mt-3">
                                                     <Text>
-                                                        Payment:
+                                                        To earn:
                                                     </Text>
-                                                    <Text className="font-semibold"> 
+                                                    <Text className="font-bold"> 
                                                         ₱ 720 
                                                     </Text>
                                                 </View>

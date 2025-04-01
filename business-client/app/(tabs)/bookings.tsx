@@ -49,22 +49,22 @@ export default function Bookings() {
                                 <View className="rounded-lg border-[1px] border-gray-300 flex flex-row">
                                     <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
                                     <View className="p-3 flex-1">
-                                        <Text className="font-semibold"> 
+                                        <Text className="font-bold"> 
                                             Software service 
                                         </Text>
                                         <View className="flex flex-row gap-1">
                                             <Text>
                                                 Client: 
                                             </Text>
-                                            <Text className="font-semibold">
+                                            <Text className="font-bold">
                                                 Juan Dela Cruz
                                             </Text>
                                         </View>
                                         <View className="flex flex-row gap-1 mt-3">
                                             <Text>
-                                                Payment:
+                                                To earn:
                                             </Text>
-                                            <Text className="font-semibold"> 
+                                            <Text className="font-bold"> 
                                                 ₱ 440 
                                             </Text>
                                         </View>
@@ -88,22 +88,22 @@ export default function Bookings() {
                                     <View key={i} className="rounded-lg border-[1px] border-gray-300 flex flex-row">
                                         <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
                                         <View className="p-3 flex-1">
-                                            <Text className="font-semibold"> 
+                                            <Text className="font-bold"> 
                                                 Design service 
                                             </Text>
                                             <View className="flex flex-row gap-1">
                                                 <Text>
                                                     Client: 
                                                 </Text>
-                                                <Text className="font-semibold">
+                                                <Text className="font-bold">
                                                     Juan Dela Cruz
                                                 </Text>
                                             </View>
                                             <View className="flex flex-row gap-1 mt-3">
                                                 <Text>
-                                                    Payment:
+                                                    To earn:
                                                 </Text>
-                                                <Text className="font-semibold"> 
+                                                <Text className="font-bold"> 
                                                     ₱ 720 
                                                 </Text>
                                             </View>
@@ -124,20 +124,20 @@ export default function Bookings() {
                         </>
                     :
                         <>
-                            <Text className="text-lg"> Bookings this month </Text>
+                            <Text className="text-lg"> Completed bookings </Text>
                             <View className="mt-2 flex flex-col gap-5">
                                 {bookings.map((booking, idx) => (
                                     <View key={idx} className="rounded-lg border-[1px] bg-white border-gray-300 flex flex-row">
                                         <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
                                         <View className="p-3 flex-1">
-                                            <Text className="font-semibold"> 
+                                            <Text className="font-bold"> 
                                                 {booking.service}
                                             </Text>
                                             <View className="flex flex-row gap-1">
                                                 <Text>
                                                     Client: 
                                                 </Text>
-                                                <Text className="font-semibold">
+                                                <Text className="font-bold">
                                                     Juan Dela Cruz
                                                 </Text>
                                             </View>
@@ -148,7 +148,7 @@ export default function Bookings() {
                                                 <Text>
                                                     Earned:
                                                 </Text>
-                                                <Text className="font-semibold"> 
+                                                <Text className="font-bold"> 
                                                     ₱ {booking.price} 
                                                 </Text>
                                             </View>
