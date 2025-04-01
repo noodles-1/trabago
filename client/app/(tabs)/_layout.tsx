@@ -1,11 +1,32 @@
-import { Tabs } from "expo-router";
+import { Tabs, withLayoutContext } from "expo-router";
 import React from "react";
-import { Platform } from "react-native";
+import { Dimensions, Platform } from "react-native";
 
 import { HapticTab } from "~/components/HapticTab";
 import TabBarBackground from "~/components/ui/TabBarBackground";
 import { Colors } from "~/constants/Colors";
 import { useColorScheme } from "~/hooks/useColorScheme";
+
+import {
+    MaterialTopTabNavigationEventMap,
+    MaterialTopTabNavigationOptions,
+    createMaterialTopTabNavigator,
+} from "@react-navigation/material-top-tabs";
+
+import {
+    useTheme,
+    type ParamListBase,
+    type TabNavigationState
+} from "@react-navigation/native";
+
+const { Navigator } = createMaterialTopTabNavigator();
+
+const MaterialTopTabs = withLayoutContext<
+    MaterialTopTabNavigationOptions,
+    typeof Navigator,
+    TabNavigationState<ParamListBase>,
+    MaterialTopTabNavigationEventMap
+>(Navigator);
 
 import Feather from "@expo/vector-icons/Feather";
 
@@ -13,12 +34,19 @@ export default function TabLayout() {
     const colorScheme = useColorScheme();
 
     return (
-        <Tabs
+        <MaterialTopTabs
             screenOptions={{
                 tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
-                headerShown: false,
-                tabBarButton: HapticTab,
-                tabBarBackground: TabBarBackground,
+                tabBarInactiveTintColor: 'grey',
+                tabBarLabelStyle: {
+                    fontSize: 12,
+                    textTransform: 'capitalize',
+                    fontWeight: 'bold',
+                },
+                tabBarIndicatorStyle: {
+                    backgroundColor: "transparent",
+                },
+                tabBarScrollEnabled: false,
                 tabBarStyle: Platform.select({
                     ios: {
                         // Use a transparent background on iOS to show the blur effect
@@ -27,8 +55,9 @@ export default function TabLayout() {
                     default: {},
                 }),
             }}
+            tabBarPosition="bottom"
         >
-            <Tabs.Screen
+            <MaterialTopTabs.Screen
                 name="home"
                 options={{
                     title: "Home",
@@ -37,7 +66,7 @@ export default function TabLayout() {
                     ),
                 }}
             />
-            <Tabs.Screen
+            <MaterialTopTabs.Screen
                 name="bookings"
                 options={{
                     title: "Bookings",
@@ -46,7 +75,7 @@ export default function TabLayout() {
                     ),
                 }}
             />
-            <Tabs.Screen
+            <MaterialTopTabs.Screen
                 name="services"
                 options={{
                     title: "Services",
@@ -55,7 +84,7 @@ export default function TabLayout() {
                     ),
                 }}
             />
-            <Tabs.Screen
+            <MaterialTopTabs.Screen
                 name="inbox"
                 options={{
                     title: "Inbox",
@@ -64,7 +93,7 @@ export default function TabLayout() {
                     ),
                 }}
             />
-            <Tabs.Screen
+            <MaterialTopTabs.Screen
                 name="profile"
                 options={{
                     title: "Profile",
@@ -73,6 +102,6 @@ export default function TabLayout() {
                     ),
                 }}
             />
-        </Tabs>
+        </MaterialTopTabs>
     );
 }
