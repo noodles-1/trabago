@@ -20,8 +20,8 @@ export default function Service() {
                     <Text className="mt-4 font-semibold text-2xl"> 
                         {id} 
                     </Text>
-                    <Text className="mt-2 font-semibold text-2xl text-primary"> 
-                        ₱550 
+                    <Text className="mt-2 font-bold tracking-wider text-3xl text-primary"> 
+                        ₱ 550 
                     </Text>
                     <View className="mt-1 flex flex-row items-center justify-start">  
                         <AntDesign name="star" size={14} color="#f4c948" />
@@ -65,8 +65,12 @@ export default function Service() {
             <KeyboardAvoidingView className="absolute bottom-0 left-0 right-0">
                 <View className="m-4 p-4 rounded-lg bg-white shadow-compact shadow-black">
                     <View className="flex flex-row justify-between">
-                        <Text className="font-xl font-bold py-2"> {id} </Text>
-                        <Text className="font-xl font-bold py-2 text-primary"> ₱550 </Text>
+                        <Text className="font-xl font-bold py-2"> 
+                            {id} 
+                        </Text>
+                        <Text className="font-xl font-bold py-2 text-primary tracking-wide"> 
+                            ₱ 550 
+                        </Text>
                     </View>
                     <Pressable
                         android_ripple={{

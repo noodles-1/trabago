@@ -51,7 +51,7 @@ export default function Bookings() {
                                     <View className="p-2 flex-1">
                                         <Text className="font-semibold"> Cleaning service </Text>
                                         <Text> Worker is on the way... </Text>
-                                        <Text className="text-right font-semibold"> ₱440 </Text>
+                                        <Text className="text-right font-semibold"> ₱ 440 </Text>
                                     </View>
                                 </View>
                             </View>
@@ -78,7 +78,7 @@ export default function Bookings() {
                                             <Text className="text-gray-500"> {booking.date} </Text>
                                             <View className="flex flex-row justify-between">
                                                 <Text className="text-gray-500"> {booking.time} </Text>
-                                                <Text className="font-semibold"> ₱{booking.price} </Text>
+                                                <Text className="font-semibold"> ₱ {booking.price} </Text>
                                             </View>
                                         </View>
                                     </View>
