@@ -1,9 +1,7 @@
-import { Tabs, withLayoutContext } from "expo-router";
+import {  withLayoutContext } from "expo-router";
 import React from "react";
-import { Dimensions, Platform } from "react-native";
+import { Platform } from "react-native";
 
-import { HapticTab } from "~/components/HapticTab";
-import TabBarBackground from "~/components/ui/TabBarBackground";
 import { Colors } from "~/constants/Colors";
 import { useColorScheme } from "~/hooks/useColorScheme";
 
@@ -14,7 +12,6 @@ import {
 } from "@react-navigation/material-top-tabs";
 
 import {
-    useTheme,
     type ParamListBase,
     type TabNavigationState
 } from "@react-navigation/native";
