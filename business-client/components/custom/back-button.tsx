@@ -14,13 +14,13 @@ const BackButton = () => {
                 android_ripple={{
                     foreground: true,
                     color: "#bbb",
-                    borderless: true
+                    borderless: true,
                 }}
             >
                 <AntDesign name="left" size={16} color="#4676c0" />
             </Pressable>
         </View>
     );
-}
- 
+};
+
 export default BackButton;

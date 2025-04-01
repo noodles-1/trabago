@@ -3,8 +3,12 @@ import { ScrollView, Text, View } from "react-native";
 
 import { Skeleton } from "~/components/ui/skeleton";
 import Header from "~/components/custom/header";
+import CustomPressable from "~/components/custom/pressable";
+import { useRouter } from "expo-router";
 
 export default function Bookings() {
+    const router = useRouter();
+
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
@@ -37,127 +41,155 @@ export default function Bookings() {
             <Header title="My bookings" />
             <ScrollView className="flex-1">
                 <View className="m-4">
-                    {loading ? 
+                    {loading ? (
                         <>
                             <Skeleton className="w-[30%] h-5 rounded-full bg-gray-300" />
                             <Skeleton className="w-full h-[80px] rounded-lg bg-gray-300 mt-4" />
                         </>
-                    :
+                    ) : (
                         <>
-                            <Text className="text-lg"> Current bookings </Text>
-                            <View className="mt-2 flex flex-col gap-5 bg-white">
-                                <View className="rounded-lg border-[1px] border-gray-300 flex flex-row">
-                                    <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
+                            <Text className="text-lg font-bold"> 
+                                Current bookings 
+                            </Text>
+                            <View className="mt-2 flex flex-col gap-5 bg-white rounded-lg border-[1px] border-gray-300 overflow-hidden">
+                                <CustomPressable
+                                    className="flex flex-row"
+                                    color="rgba(100, 100, 100, 0.4)"
+                                    onPress={() => router.navigate({
+                                        pathname: "/booking/[id]",
+                                        params: { id: "1" }
+                                    })}
+                                >
+                                    <View className="w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
                                     <View className="p-3 flex-1">
-                                        <Text className="font-bold"> 
-                                            Software service 
+                                        <Text className="font-bold">
+                                            Software service
                                         </Text>
                                         <View className="flex flex-row gap-1">
-                                            <Text>
-                                                Client: 
-                                            </Text>
+                                            <Text>Client:</Text>
                                             <Text className="font-bold">
                                                 Juan Dela Cruz
                                             </Text>
                                         </View>
                                         <View className="flex flex-row gap-1 mt-3">
-                                            <Text>
-                                                To earn:
-                                            </Text>
-                                            <Text className="font-bold"> 
-                                                ₱ 440 
+                                            <Text>To earn:</Text>
+                                            <Text className="font-bold">
+                                                ₱ 440
                                             </Text>
                                         </View>
                                     </View>
-                                </View>
+                                </CustomPressable>
                             </View>
                         </>
-                    }
+                    )}
                 </View>
                 <View className="m-4">
-                    {loading ? 
+                    {loading ? (
                         <>
                             <Skeleton className="w-[30%] h-5 rounded-full bg-gray-300" />
                             <Skeleton className="w-full h-[80px] rounded-lg bg-gray-300 mt-4" />
                         </>
-                    :
+                    ) : (
                         <>
-                            <Text className="text-lg"> Accepted bookings </Text>
+                            <Text className="text-lg font-bold"> 
+                                Accepted bookings 
+                            </Text>
                             <View className="mt-2 flex flex-col gap-5 bg-white">
-                                {Array.from({ length: 2 }).map((_, i) =>
-                                    <View key={i} className="rounded-lg border-[1px] border-gray-300 flex flex-row">
-                                        <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
-                                        <View className="p-3 flex-1">
-                                            <Text className="font-bold"> 
-                                                Design service 
-                                            </Text>
-                                            <View className="flex flex-row gap-1">
-                                                <Text>
-                                                    Client: 
-                                                </Text>
+                                {Array.from({ length: 2 }).map((_, i) => (
+                                    <View
+                                        key={i}
+                                        className="rounded-lg border-[1px] border-gray-300 overflow-hidden"
+                                    >
+                                        <CustomPressable
+                                            className="flex flex-row"
+                                            color="rgba(100, 100, 100, 0.4)"
+                                            onPress={() => router.navigate({
+                                                pathname: "/booking/[id]",
+                                                params: { id: `${i + 2}` }
+                                            })}
+                                        >
+                                            <View className="w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
+                                            <View className="p-3 flex-1">
                                                 <Text className="font-bold">
-                                                    Juan Dela Cruz
+                                                    Design service
                                                 </Text>
+                                                <View className="flex flex-row gap-1">
+                                                    <Text>Client:</Text>
+                                                    <Text className="font-bold">
+                                                        Juan Dela Cruz
+                                                    </Text>
+                                                </View>
+                                                <View className="flex flex-row gap-1 mt-3">
+                                                    <Text>To earn:</Text>
+                                                    <Text className="font-bold">
+                                                        ₱ 720
+                                                    </Text>
+                                                </View>
                                             </View>
-                                            <View className="flex flex-row gap-1 mt-3">
-                                                <Text>
-                                                    To earn:
-                                                </Text>
-                                                <Text className="font-bold"> 
-                                                    ₱ 720 
-                                                </Text>
-                                            </View>
-                                        </View>
-                                    </View>
-                                )}
-                            </View>
-                        </>
-                    }
-                </View>
-                <View className="m-4">
-                    {loading ?
-                        <>
-                            <Skeleton className="w-[30%] h-5 rounded-full bg-gray-300" />
-                            {Array.from({ length: 3 }).map((_, idx) => (
-                                <Skeleton key={idx} className="w-full h-[80px] rounded-lg bg-gray-300 mt-4" />
-                            ))}
-                        </>
-                    :
-                        <>
-                            <Text className="text-lg"> Completed bookings </Text>
-                            <View className="mt-2 flex flex-col gap-5">
-                                {bookings.map((booking, idx) => (
-                                    <View key={idx} className="rounded-lg border-[1px] bg-white border-gray-300 flex flex-row">
-                                        <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
-                                        <View className="p-3 flex-1">
-                                            <Text className="font-bold"> 
-                                                {booking.service}
-                                            </Text>
-                                            <View className="flex flex-row gap-1">
-                                                <Text>
-                                                    Client: 
-                                                </Text>
-                                                <Text className="font-bold">
-                                                    Juan Dela Cruz
-                                                </Text>
-                                            </View>
-                                            <Text className="text-gray-500"> 
-                                                {booking.date} - {booking.time}
-                                            </Text>
-                                            <View className="flex flex-row gap-1 mt-3">
-                                                <Text>
-                                                    Earned:
-                                                </Text>
-                                                <Text className="font-bold"> 
-                                                    ₱ {booking.price} 
-                                                </Text>
-                                            </View>
-                                        </View>
+                                        </CustomPressable>
                                     </View>
                                 ))}
                             </View>
                         </>
-                    }
+                    )}
+                </View>
+                <View className="m-4">
+                    {loading ? (
+                        <>
+                            <Skeleton className="w-[30%] h-5 rounded-full bg-gray-300" />
+                            {Array.from({ length: 3 }).map((_, idx) => (
+                                <Skeleton
+                                    key={idx}
+                                    className="w-full h-[80px] rounded-lg bg-gray-300 mt-4"
+                                />
+                            ))}
+                        </>
+                    ) : (
+                        <>
+                            <Text className="text-lg font-bold">
+                                Completed bookings
+                            </Text>
+                            <View className="mt-2 flex flex-col gap-5">
+                                {bookings.map((booking, i) => (
+                                    <View
+                                        key={i}
+                                        className="rounded-lg border-[1px] bg-white border-gray-300 overflow-hidden"
+                                    >
+                                        <CustomPressable
+                                            className="flex flex-row"
+                                            color="rgba(100, 100, 100, 0.4)"
+                                            onPress={() => router.navigate({
+                                                pathname: "/booking/[id]",
+                                                params: { id: `${i + 4}` }
+                                            })}
+                                        >
+                                            <View className="w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
+                                            <View className="p-3 flex-1">
+                                                <Text className="font-bold">
+                                                    {booking.service}
+                                                </Text>
+                                                <View className="flex flex-row gap-1">
+                                                    <Text>Client:</Text>
+                                                    <Text className="font-bold">
+                                                        Juan Dela Cruz
+                                                    </Text>
+                                                </View>
+                                                <Text className="text-gray-500">
+                                                    {booking.date} - {booking.time}
+                                                </Text>
+                                                <View className="flex flex-row gap-1 mt-3">
+                                                    <Text>Earned:</Text>
+                                                    <Text className="font-bold">
+                                                        ₱ {booking.price}
+                                                    </Text>
+                                                </View>
+                                            </View>
+                                        </CustomPressable>
+                                    </View>
+                                ))}
+                            </View>
+                        </>
+                    )}
                 </View>
             </ScrollView>
         </>

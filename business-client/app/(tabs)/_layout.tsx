@@ -1,4 +1,4 @@
-import {  withLayoutContext } from "expo-router";
+import { withLayoutContext } from "expo-router";
 import React from "react";
 import { Platform } from "react-native";
 
@@ -13,7 +13,7 @@ import {
 
 import {
     type ParamListBase,
-    type TabNavigationState
+    type TabNavigationState,
 } from "@react-navigation/native";
 
 const { Navigator } = createMaterialTopTabNavigator();
@@ -33,12 +33,12 @@ export default function TabLayout() {
     return (
         <MaterialTopTabs
             screenOptions={{
-                tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
-                tabBarInactiveTintColor: 'grey',
+                tabBarActiveTintColor: Colors.light.tint,
+                tabBarInactiveTintColor: "grey",
                 tabBarLabelStyle: {
                     fontSize: 10,
-                    textTransform: 'capitalize',
-                    fontWeight: 'bold',
+                    textTransform: "capitalize",
+                    fontWeight: "bold",
                 },
                 tabBarIndicatorStyle: {
                     backgroundColor: "transparent",

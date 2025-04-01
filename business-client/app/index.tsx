@@ -12,14 +12,12 @@ export default function Main() {
     if (loading) {
         return (
             <View className="h-screen w-screen flex items-center justify-center">
-                <Image 
+                <Image
                     source={require("~/assets/images/trabago-logo.png")}
                     className="h-28 w-28"
                 />
                 <View className="flex flex-row gap-[4px]">
-                    <Text className="text-lg tracking-wider">
-                        For
-                    </Text>
+                    <Text className="text-lg tracking-wider">For</Text>
                     <Text className="text-lg text-primary font-bold tracking-wider">
                         Business
                     </Text>

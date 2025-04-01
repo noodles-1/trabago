@@ -60,10 +60,10 @@ module.exports = {
                 "accordion-up": "accordion-up 0.2s ease-out",
             },
             boxShadow: {
-                'compact': '0 0 5px 0 rgb(0, 0, 0)',
-                'compact-md': '0 2px 6px rgba(0, 0, 0, 0.15)',
-                'compact-lg': '0 3px 8px rgba(0, 0, 0, 0.2)',
-            }
+                compact: "0 0 5px 0 rgb(0, 0, 0)",
+                "compact-md": "0 2px 6px rgba(0, 0, 0, 0.15)",
+                "compact-lg": "0 3px 8px rgba(0, 0, 0, 0.2)",
+            },
         },
     },
     plugins: [require("tailwindcss-animate")],
