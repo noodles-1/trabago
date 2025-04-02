@@ -97,14 +97,14 @@ export default function ServicesList() {
                                             <View className="flex flex-col rounded-lg border-gray-400 border-[1px] bg-white">
                                                 <View className="bg-gray-300 h-[150px] rounded-t-lg w-full" />
                                                 <View className="p-2">
-                                                    <Text> Service #{idx + 1} </Text>
+                                                    <Text className="font-bold"> Service #{idx + 1} </Text>
                                                     <View className="mt-1 flex flex-row items-center justify-start">  
                                                         <Text className="font-bold text-primary"> ₱ </Text>
-                                                        <Text className="text-lg font-bold text-primary left-[-7px]"> 550 </Text>
+                                                        <Text className="text-lg font-bold text-primary left-[-7px]"> {" "}550 </Text>
                                                     </View>
                                                     <View className="mt-1 flex flex-row items-center justify-start">  
-                                                        <AntDesign name="star" size={14} color="#f4c948" />
-                                                        <Text className="text-sm"> 4.8 </Text>
+                                                        <AntDesign name="star" size={12} color="#f4c948" />
+                                                        <Text className="text-sm text-gray-500"> 4.8 </Text>
                                                     </View>
                                                 </View>
                                             </View>

@@ -57,7 +57,7 @@ export default function RootLayout() {
         <ThemeProvider value={LIGHT_THEME}>
             <StatusBar style="light" />
             <Stack>
-                <Stack.Screen name="index" options={{ headerShown: false }} />
+                {/* <Stack.Screen name="index" options={{ headerShown: false }} /> */}
                 <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                 <Stack.Screen name="booking" options={{ headerShown: false }} />
                 <Stack.Screen name="service" options={{ headerShown: false }} />

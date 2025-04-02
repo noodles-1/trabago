@@ -137,13 +137,17 @@ export default function Home() {
                                                         Software service
                                                     </Text>
                                                     <View className="flex flex-row gap-1">
-                                                        <Text>Client:</Text>
-                                                        <Text className="font-bold">
+                                                        <Text className="text-gray-500">
+                                                            Client:
+                                                        </Text>
+                                                        <Text>
                                                             Juan Dela Cruz
                                                         </Text>
                                                     </View>
                                                     <View className="flex flex-row gap-1 mt-3">
-                                                        <Text>To earn:</Text>
+                                                        <Text className="text-gray-500">
+                                                            To earn:
+                                                        </Text>
                                                         <Text className="font-bold">
                                                             ₱ 440
                                                         </Text>
@@ -199,13 +203,17 @@ export default function Home() {
                                                         Design service
                                                     </Text>
                                                     <View className="flex flex-row gap-1">
-                                                        <Text>Client:</Text>
-                                                        <Text className="font-bold">
+                                                        <Text className="text-gray-500">
+                                                            Client:
+                                                        </Text>
+                                                        <Text>
                                                             Juan Dela Cruz
                                                         </Text>
                                                     </View>
                                                     <View className="flex flex-row gap-1 mt-3">
-                                                        <Text>To earn:</Text>
+                                                        <Text className="text-gray-500">
+                                                            To earn:
+                                                        </Text>
                                                         <Text className="font-bold">
                                                             ₱ 720
                                                         </Text>

@@ -21,71 +21,71 @@ export default function Booking() {
             <ScrollView className="flex-1">
                 <View className="m-8 flex flex-col gap-12">
                     <View>
-                        <Text className="font-bold">
+                        <Text className="font-bold text-lg">
                             Booking information
                         </Text>
                         <Separator className="my-4" />
                         <View className="flex flex-col gap-4">
                             <View className="flex flex-row justify-between">
-                                <Text>
+                                <Text className="text-gray-500">
                                     Name
                                 </Text>
-                                <Text className="font-bold text-primary">
+                                <Text className="font-bold">
                                     Software service
                                 </Text>
                             </View>
                             <View className="flex flex-row justify-between">
-                                <Text>
+                                <Text className="text-gray-500">
                                     ID
                                 </Text>
-                                <Text className="font-bold text-primary">
+                                <Text className="font-bold">
                                     #{id}
                                 </Text>
                             </View>
                             <View className="flex flex-row justify-between">
-                                <Text>
+                                <Text className="text-gray-500">
                                     Date
                                 </Text>
-                                <Text className="font-bold text-primary">
+                                <Text className="font-bold">
                                     4/1/2025
                                 </Text>
                             </View>
                             <View className="flex flex-row justify-between">
-                                <Text>
+                                <Text className="text-gray-500">
                                     Time
                                 </Text>
-                                <Text className="font-bold text-primary">
+                                <Text className="font-bold">
                                     4:20 PM
                                 </Text>
                             </View>
                             <View className="flex flex-row justify-between">
-                                <Text>
+                                <Text className="text-gray-500">
                                     Status
                                 </Text>
-                                <Text className="font-bold text-primary">
+                                <Text className="font-bold">
                                     Accepted
                                 </Text>
                             </View>
                             <View className="flex flex-row justify-between">
-                                <Text>
+                                <Text className="text-gray-500">
                                     To earn
                                 </Text>
-                                <Text className="font-bold text-primary">
+                                <Text className="font-bold">
                                     ₱ 550
                                 </Text>
                             </View>
                             <View className="flex flex-row justify-between">
-                                <Text>
+                                <Text className="text-gray-500">
                                     Payment method
                                 </Text>
-                                <Text className="font-bold text-primary">
+                                <Text className="font-bold">
                                     GO-Cash
                                 </Text>
                             </View>
                         </View>
                     </View>
                     <View>
-                        <Text className="font-bold">
+                        <Text className="font-bold text-lg">
                             Client notes
                         </Text>
                         <Separator className="my-4" />
@@ -94,7 +94,7 @@ export default function Booking() {
                         </Text>
                     </View>
                     <View>
-                        <Text className="font-bold">
+                        <Text className="font-bold text-lg">
                             About client
                         </Text>
                         <Separator className="my-4" />
