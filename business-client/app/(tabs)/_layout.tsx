@@ -90,6 +90,15 @@ export default function TabLayout() {
                     ),
                 }}
             />
+            <MaterialTopTabs.Screen
+                name="profile"
+                options={{ 
+                    title: "Profile",
+                    tabBarIcon: ({ color }) => (
+                        <Feather name="user" size={24} color={color} />
+                    ),
+                }}
+            />
         </MaterialTopTabs>
     );
 }

@@ -64,6 +64,7 @@ export default function Home() {
                         <CustomPressable
                             className="p-6 flex flex-col gap-3"
                             color="rgba(100, 100, 100, 0.4)"
+                            onPress={() => router.navigate("/profile")}
                         >
                             <Text className="tracking-[3px] font-bold text-[10px]">
                                 TODAY'S BOOKINGS
@@ -81,6 +82,7 @@ export default function Home() {
                         <CustomPressable
                             className="p-6 flex flex-col gap-3"
                             color="rgba(100, 100, 100, 0.4)"
+                            onPress={() => router.navigate("/profile")}
                         >
                             <Text className="tracking-[3px] font-bold text-[10px]">
                                 GO-CASH BALANCE

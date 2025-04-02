@@ -5,9 +5,11 @@ import { LinearGradient } from "expo-linear-gradient";
 const Gradient = ({
     className,
     children,
+    radius,
 }: {
     className?: string
     children?: ReactNode
+    radius?: number
 }) => {
     return (
         <LinearGradient
@@ -15,7 +17,7 @@ const Gradient = ({
             colors={["#214f98", "#6090dc"]}
             start={{ x: 0, y: 1 }}
             end={{ x: 1, y: 0 }}
-            style={{ borderRadius: 6 }}
+            style={{ borderRadius: radius ?? 6 }}
         >
             {children}
         </LinearGradient>
