@@ -1,0 +1,37 @@
+{
+    "build": {
+        "preview": {
+            "android": {
+                "buildType": "apk"
+            },
+            "env": {
+                "PROJECT_ROOT": "business-client"
+            }
+        },
+        "preview2": {
+            "android": {
+                "gradleCommand": ":app:assembleRelease"
+            },
+            "env": {
+                "PROJECT_ROOT": "business-client"
+            }
+        },
+        "preview3": {
+            "developmentClient": true,
+            "env": {
+                "PROJECT_ROOT": "business-client"
+            }
+        },
+        "preview4": {
+            "distribution": "internal",
+            "env": {
+                "PROJECT_ROOT": "business-client"
+            }
+        },
+        "production": {
+            "env": {
+                "PROJECT_ROOT": "business-client"
+            }
+        }
+    }
+}
