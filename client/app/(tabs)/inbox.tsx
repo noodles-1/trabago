@@ -7,7 +7,9 @@ export default function Inbox() {
         <>
             <Header title="Inbox" />
             <ScrollView className="flex-1 bg-gray-100">
-                <Text className="text-gray-500 text-center p-[5rem]"> No conversations yet. Book a service and chat with your provider. </Text>
+                <Text className="text-gray-500 text-center p-[5rem]">
+                    No conversations yet. Book a service and chat with your provider.
+                </Text>
             </ScrollView>
         </>
     );

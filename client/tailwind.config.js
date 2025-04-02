@@ -63,6 +63,7 @@ module.exports = {
                 'compact': '0 0 5px 0 rgb(0, 0, 0)',
                 'compact-md': '0 2px 6px rgba(0, 0, 0, 0.15)',
                 'compact-lg': '0 3px 8px rgba(0, 0, 0, 0.2)',
+                'compact-top': '0 -10px 10px 0 rgb(0, 0, 0)',
             }
         },
     },

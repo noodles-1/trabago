@@ -36,7 +36,7 @@ export default function TabLayout() {
                 tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
                 tabBarInactiveTintColor: 'grey',
                 tabBarLabelStyle: {
-                    fontSize: 12,
+                    fontSize: 10,
                     textTransform: 'capitalize',
                     fontWeight: 'bold',
                 },
@@ -92,7 +92,7 @@ export default function TabLayout() {
             />
             <MaterialTopTabs.Screen
                 name="profile"
-                options={{
+                options={{ 
                     title: "Profile",
                     tabBarIcon: ({ color }) => (
                         <Feather name="user" size={24} color={color} />

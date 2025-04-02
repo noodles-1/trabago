@@ -4,6 +4,8 @@ import { useRouter } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 
 import Header from "~/components/custom/header";
+import CustomPressable from "~/components/custom/pressable";
+import Gradient from "~/components/custom/gradient";
 
 export default function Services() {
     const router = useRouter();
@@ -43,10 +45,6 @@ export default function Services() {
             {
                 name: "Driver",
                 icon: require("~/assets/images/car.png")
-            },
-            {
-                name: "Taxi",
-                icon: require("~/assets/images/taxi.png")
             },
             {
                 name: "Courier",
@@ -131,36 +129,29 @@ export default function Services() {
             <ScrollView className="flex-1 px-2">
                 {categories.map((category, i) => 
                     <View key={i} className="mt-4">
-                        <Text className="text-lg mx-2 font-medium"> {categoryNames[i]} </Text>
+                        <Text className="text-lg mx-2 font-bold"> {categoryNames[i]} </Text>
                         <View className="flex flex-row flex-wrap">
                             {category.map((service, j) => (
                                 <View key={j} className="w-[25%] p-2">
-                                    <Pressable
+                                    <CustomPressable
                                         onPress={() => router.navigate({
                                             pathname: "/services/[service]",
                                             params: {
                                                 service: service.name
                                             }
                                         })}
-                                        android_ripple={{
-                                            foreground: true,
-                                            color: "rgba(255, 255, 255, 0.3)",
-                                        }}
+                                        color="rgba(255, 255, 255, 0.3)"
                                     >
-                                        <LinearGradient 
-                                            className="bg-primary p-6"
-                                            colors={["#214f98", "#6090dc"]}
-                                            start={{ x: 0, y: 1 }}
-                                            end={{ x: 1, y: 0 }}
-                                            style={{ borderRadius: 6 }}
+                                        <Gradient 
+                                            className="bg-primary p-6 flex flex-row items-center justify-center"
                                         >
                                             <Image 
                                                 source={service.icon} 
-                                                className="h-12 w-12" 
+                                                className="h-10 w-10" 
                                             />
-                                        </LinearGradient>
-                                    </Pressable>
-                                    <Text className="text-center mt-1"> {service.name} </Text>
+                                        </Gradient>
+                                    </CustomPressable>
+                                    <Text className="text-center mt-1 text-sm"> {service.name} </Text>
                                 </View>
                             ))}
                         </View>

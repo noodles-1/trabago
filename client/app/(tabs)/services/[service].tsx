@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
+import { ScrollView, Text, TextInput, View } from "react-native";
 
 import { useLocalSearchParams, useRouter } from "expo-router";
 
@@ -10,6 +10,7 @@ import Feather from "@expo/vector-icons/Feather";
 import { Skeleton } from "~/components/ui/skeleton";
 import Header from "~/components/custom/header";
 import Pill from "~/components/custom/pill";
+import CustomPressable from "~/components/custom/pressable";
 
 export default function ServicesList() {
     const router = useRouter();
@@ -43,15 +44,15 @@ export default function ServicesList() {
                 <View className="mx-2 my-4 flex flex-row gap-2">
                     <Pill 
                         text="Sort" 
-                        icon={() => <Octicon name="sort-asc" size={16} color="#444" />}
+                        icon={<Octicon name="sort-asc" size={16} color="#444" />}
                     />
                     <Pill 
                         text="Ratings" 
-                        icon={() => <AntDesign name="staro" size={16} color="#444" />}
+                        icon={<AntDesign name="staro" size={16} color="#444" />}
                     />
                     <Pill 
                         text="Filter" 
-                        icon={() => <AntDesign name="filter" size={16} color="#444" />}
+                        icon={<AntDesign name="filter" size={16} color="#444" />}
                     />
                 </View>
                 <View className="my-4">
@@ -70,21 +71,17 @@ export default function ServicesList() {
                             <>
                                 {Array.from({ length: 8 }).map((_, idx) => 
                                     <View key={idx} className="w-[50%] p-2 overflow-hidden rounded-lg">
-                                        <Pressable
+                                        <CustomPressable
                                             onPress={() => router.navigate({
                                                 pathname: "/service/[id]",
                                                 params: {
                                                     id: `Service #${idx + 1}`
                                                 }
                                             })}
-                                            android_ripple={{
-                                                foreground: true,
-                                                color: "rgba(255, 255, 255, 0.4)",
-                                                borderless: true
-                                            }}
+                                            color="rgba(255, 255, 255, 0.4)"
                                         >
                                             <View className="flex flex-col rounded-lg border-gray-400 border-[1px] bg-white">
-                                                <View className="bg-gray-300 h-[150px] w-full" />
+                                                <View className="bg-gray-300 h-[150px] rounded-t-lg w-full" />
                                                 <View className="p-2">
                                                     <Text> Service #{idx + 1} </Text>
                                                     <View className="mt-1 flex flex-row items-center justify-start">  
@@ -97,7 +94,7 @@ export default function ServicesList() {
                                                     </View>
                                                 </View>
                                             </View>
-                                        </Pressable>
+                                        </CustomPressable>
                                     </View>
                                 )}
                             </>

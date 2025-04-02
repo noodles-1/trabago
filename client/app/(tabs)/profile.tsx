@@ -1,11 +1,11 @@
-import { Pressable, ScrollView, Text, View } from "react-native";
-
-import { LinearGradient } from "expo-linear-gradient";
+import { ScrollView, Text, View } from "react-native";
 
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-import Header from "~/components/custom/header";
+import { Separator } from "~/components/ui/separator";
+import Gradient from "~/components/custom/gradient";
+import CustomPressable from "~/components/custom/pressable";
 
 export default function Profile() {
     const items = [
@@ -21,7 +21,7 @@ export default function Profile() {
         },
         {
             name: "Payment",
-            description: "GCash",
+            description: "GO-Cash",
             icon: <AntDesign 
                 name="creditcard" 
                 size={30} 
@@ -53,23 +53,18 @@ export default function Profile() {
 
     return (
         <>
-            <Header title="My profile" />
-            <ScrollView className="flex-1 bg-gray-100">
-                <LinearGradient 
-                    className="bg-primary px-4 pt-8 pb-4 h-[150px] w-full flex flex-col justify-end"
-                    colors={["#214f98", "#6090dc"]}
-                    start={{ x: 0, y: 1 }}
-                    end={{ x: 1, y: 0 }}
-                >
-                    <View className="flex flex-row gap-4">
+            <ScrollView className="flex-1 flex flex-col">
+                <Gradient radius={0}>
+                    <View className="h-[30px]" />
+                    <View className="flex flex-col items-center justify-center gap-2 h-[220px]">
                         <AntDesign 
                             name="user" 
                             size={34} 
                             color="#4676c0" 
-                            className="bg-white flex-shrink self-start p-4 rounded-full"
+                            className="bg-white flex-shrink p-4 rounded-full"
                         />
-                        <View className="flex flex-col gap-1">
-                            <Text className="font-semibold text-xl text-white">
+                        <View className="flex flex-col items-center gap-1">
+                            <Text className="font-bold text-xl text-white">
                                 Juan Dela Cruz
                             </Text>
                             <View className="flex flex-row gap-3">
@@ -93,55 +88,57 @@ export default function Profile() {
                             </View>
                         </View>
                     </View>
-                </LinearGradient>
-                <View className="p-4 bg-white">
-                    <View className="flex flex-row flex-wrap">
-                        {items.map((item, i) => 
-                            <View key={i} className="w-[25%]">
-                                <Pressable
-                                    className="flex flex-row justify-center items-start overflow-hidden"
-                                    android_ripple={{
-                                        foreground: true,
-                                        color: "rgba(100, 100, 100, 0.2)",
-                                    }}
-                                >
-                                    <View className="flex flex-col items-center">
-                                        <View className="flex flex-row items-center">
-                                            {item.icon}
-                                        </View>
-                                        <Text className="text-sm">
-                                            {item.name}
-                                        </Text>
-                                        <Text className="text-sm text-primary">
-                                            {item?.description}
-                                        </Text>
+                    <View className="bg-white rounded-t-[3rem] shadow-compact-top z-50 p-2">
+                        <View className="p-4">
+                            <View className="flex flex-row flex-wrap">
+                                {items.map((item, i) => 
+                                    <View key={i} className="w-[25%]">
+                                        <CustomPressable
+                                            className="flex flex-row justify-center items-start overflow-hidden"
+                                            color="rgba(100, 100, 100, 0.2)"
+                                        >
+                                            <View className="flex flex-col items-center">
+                                                <View className="flex flex-row items-center">
+                                                    {item.icon}
+                                                </View>
+                                                <Text className="text-sm">
+                                                    {item.name}
+                                                </Text>
+                                                <Text className="text-sm text-primary">
+                                                    {item?.description}
+                                                </Text>
+                                            </View>
+                                        </CustomPressable>
                                     </View>
-                                </Pressable>
+                                )}
                             </View>
-                        )}
+                        </View>
+                        <View className="p-4 mt-4">
+                            <Text className="text-lg font-bold"> 
+                                General
+                            </Text>
+                            <Separator className="my-4" />
+                            <View className="flex flex-col gap-2">
+                                {aboutItems.map((item, i) =>
+                                    <Text key={i} className="text-blue-500 underline">
+                                        {item}
+                                    </Text>
+                                )}
+                            </View>
+                        </View>
+                        <View className="mt-[80px] mx-20 bg-white overflow-hidden rounded-lg border-gray-300 border-[1px]">
+                            <CustomPressable
+                                className="flex flex-row justify-center items-start py-4"
+                                color="rgba(100, 100, 100, 0.2)"
+                            >
+                                <Text className="text-destructive">
+                                    Logout
+                                </Text>
+                            </CustomPressable>
+                        </View>
+                        <View className="h-[100px]" />
                     </View>
-                </View>
-                <View className="p-4 bg-white mt-4">
-                    <Text className="text-xl"> 
-                        General
-                    </Text>
-                    {aboutItems.map((item, i) =>
-                        <Text key={i} className="mt-4 text-blue-500 underline">
-                            {item}
-                        </Text>
-                    )}
-                </View>
-                <View className="mt-8 mx-20 bg-white">
-                    <Pressable
-                        className="flex flex-row justify-center items-start overflow-hidden py-4"
-                        android_ripple={{
-                            foreground: true,
-                            color: "rgba(100, 100, 100, 0.2)",
-                        }}
-                    >
-                        <Text className="text-destructive"> Logout </Text>
-                    </Pressable>
-                </View>
+                </Gradient>
             </ScrollView>
         </>
     );

@@ -8,6 +8,8 @@ import Feather from "@expo/vector-icons/Feather";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
 import { Skeleton } from "~/components/ui/skeleton";
+import Gradient from "~/components/custom/gradient";
+import CustomPressable from "~/components/custom/pressable";
 
 export default function Home() {
     const router = useRouter();
@@ -33,8 +35,8 @@ export default function Home() {
             icon: require("~/assets/images/cleaning.png")
         },
         {
-            name: "Taxi",
-            icon: require("~/assets/images/taxi.png")
+            name: "Design",
+            icon: require("~/assets/images/design.png")
         },
         {
             name: "Repair",
@@ -46,18 +48,14 @@ export default function Home() {
         <>
             <View className="absolute top-0 left-0 right-0 z-10 bg-white h-8" />
             <ScrollView className="flex-1">
-                <View className="flex flex-row items-center px-2 pt-8 pb-2">
+                <View className="flex flex-row items-center px-2 pt-10 pb-2">
                     <Image source={require("~/assets/images/trabago-logo.png")} className="h-12 w-12" />
                     <Text className="text-2xl text-primary font-bold"> Home </Text>
                 </View>
-                <LinearGradient 
+                <Gradient 
                     className="p-6 bg-primary mx-4 my-1 flex flex-col gap-3"
-                    colors={["#214f98", "#6090dc"]}
-                    start={{ x: 0, y: 1 }}
-                    end={{ x: 1, y: 0 }}
-                    style={{ borderRadius: 6 }}
                 >
-                    <Text className="text-white font-semibold"> España Blvd, Sampaloc, Manila </Text>
+                    <Text className="text-white"> España Blvd, Sampaloc, Manila </Text>
                     <View className="flex flex-row items-center bg-white px-4 py-2 gap-4 rounded-xl">
                         <Feather name="search" size={20} color="#666" />
                         <TextInput 
@@ -68,7 +66,7 @@ export default function Home() {
                             underlineColorAndroid="transparent"
                         />
                     </View>
-                </LinearGradient>
+                </Gradient>
                 <View className="m-4">
                     {loading ?
                         <>
@@ -78,25 +76,21 @@ export default function Home() {
                     :
                         <>
                             <View className="flex flex-row items-center justify-between gap-4">
-                                <Text className="text-lg font-semibold"> Ongoing bookings </Text>
-                                <Pressable 
+                                <Text className="text-lg font-bold"> Ongoing bookings </Text>
+                                <CustomPressable 
                                     className="rounded-full p-2" 
                                     onPress={() => router.navigate("/bookings")}
-                                    android_ripple={{
-                                        foreground: true,
-                                        color: "#bbb",
-                                        borderless: true
-                                    }}
+                                    color="#bbb"
                                 >
                                     <AntDesign name="right" size={16} color="#4676c0" />
-                                </Pressable>
+                                </CustomPressable>
                             </View>
                             <View className="rounded-lg border-[1px] border-gray-300 flex flex-row h-[80px] my-2 w-[80%]">
                                 <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
                                 <View className="p-2 flex-1">
-                                    <Text className="font-semibold"> Cleaning service </Text>
+                                    <Text className="font-bold"> Cleaning service </Text>
                                     <Text> Worker is on the way... </Text>
-                                    <Text className="text-right font-semibold"> ₱440 </Text>
+                                    <Text className="text-right font-bold"> ₱440 </Text>
                                 </View>
                             </View>
                         </>
@@ -104,47 +98,36 @@ export default function Home() {
                 </View>
                 <View className="m-4">
                     <View className="flex flex-row items-center justify-between gap-4">
-                        <Text className="text-lg font-semibold"> Popular services </Text>
-                        <Pressable 
+                        <Text className="text-lg font-bold"> Popular services </Text>
+                        <CustomPressable 
                             className="rounded-full p-2" 
                             onPress={() => router.navigate("/services")}
-                            android_ripple={{
-                                foreground: true,
-                                color: "#bbb",
-                                borderless: true
-                            }}
+                            color="#bbb"
                         >
                             <AntDesign name="right" size={16} color="#4676c0" />
-                        </Pressable>
+                        </CustomPressable>
                     </View>
                     <View className="flex flex-row justify-between mt-2">
                         {services.map((service, idx) => (
                             <View key={idx}>
-                                <Pressable
+                                <CustomPressable
                                     onPress={() => router.navigate({
                                         pathname: "/services/[service]",
                                         params: {
                                             service: service.name
                                         }
                                     })}
-                                    android_ripple={{
-                                        foreground: true,
-                                        color: "rgba(255, 255, 255, 0.3)",
-                                    }}
+                                    color="rgba(255, 255, 255, 0.3)"
                                 >
-                                    <LinearGradient 
-                                        className="bg-primary p-6"
-                                        colors={["#214f98", "#6090dc"]}
-                                        start={{ x: 0, y: 1 }}
-                                        end={{ x: 1, y: 0 }}
-                                        style={{ borderRadius: 6 }}
+                                    <Gradient 
+                                        className="bg-primary p-6 flex flex-row justify-center items-center"
                                     >
                                         <Image 
                                             source={service.icon} 
-                                            className="h-12 w-12" 
+                                            className="h-10 w-10" 
                                         />
-                                    </LinearGradient>
-                                </Pressable>
+                                    </Gradient>
+                                </CustomPressable>
                                 <Text className="text-center mt-1"> {service.name} </Text>
                             </View>
                         ))}
@@ -159,22 +142,18 @@ export default function Home() {
                     :
                         <>
                             <View className="flex flex-row items-center justify-between gap-4">
-                                <Text className="text-lg font-semibold"> Featured </Text>
-                                <Pressable 
+                                <Text className="text-lg font-bold"> Featured </Text>
+                                <CustomPressable 
                                     className="rounded-full p-2" 
                                     onPress={() => router.navigate("/services")}
-                                    android_ripple={{
-                                        foreground: true,
-                                        color: "#bbb",
-                                        borderless: true
-                                    }}
+                                    color="#bbb"
                                 >
                                     <AntDesign name="right" size={16} color="#4676c0" />
-                                </Pressable>
+                                </CustomPressable>
                             </View>
                             <View className="mt-2 mb-10">
                                 <View className="rounded-lg w-[280px] h-[180px] bg-gray-300" />
-                                <Text className="mt-1 font-semibold"> Promote your service/business here </Text>
+                                <Text className="mt-1 font-bold"> Promote your service/business here </Text>
                             </View>
                         </>
                     }

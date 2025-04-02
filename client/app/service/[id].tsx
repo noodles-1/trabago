@@ -17,7 +17,7 @@ export default function Service() {
             <ScrollView className="flex-1">
                 <View className="bg-gray-300 h-[350px] w-full" />
                 <View className="px-4">
-                    <Text className="mt-4 font-semibold text-2xl"> 
+                    <Text className="mt-4 font-bold text-2xl"> 
                         {id} 
                     </Text>
                     <Text className="mt-2 font-bold tracking-wider text-3xl text-primary"> 
@@ -30,7 +30,7 @@ export default function Service() {
                     <View className="flex flex-col gap-2 mt-8">
                         <Text> 
                             By:
-                            <Text className="font-semibold"> Service Provider Name </Text>
+                            <Text className="font-bold"> Service Provider Name </Text>
                         </Text>
                         <View>
                             <Text>
@@ -49,7 +49,7 @@ export default function Service() {
                             </Text>
                         </View>
                     </View>
-                    <Text className="text-lg mt-8"> 
+                    <Text className="text-lg mt-8 font-bold"> 
                         Service ratings 
                     </Text>
                     <View className="my-4 flex flex-row gap-2 flex-wrap">
@@ -85,7 +85,7 @@ export default function Service() {
                             end={{ x: 1, y: 0 }}
                             style={{ borderRadius: 6 }}
                         >
-                            <Text className="text-lg text-white text-center font-semibold"> Book now </Text>
+                            <Text className="text-lg text-white text-center font-bold"> Book now </Text>
                         </LinearGradient>
                     </Pressable>
                 </View>
