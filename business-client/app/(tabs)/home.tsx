@@ -72,7 +72,7 @@ export default function Home() {
                                 <Skeleton className="h-[30px] w-[30px] bg-gray-300" />
                             ) : (
                                 <Text className="font-bold tracking-[2px] text-2xl">
-                                    4
+                                    3
                                 </Text>
                             )}
                         </CustomPressable>

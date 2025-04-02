@@ -1,6 +1,6 @@
 import { KeyboardAvoidingView, ScrollView, Text, View } from "react-native";
 
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Feather from "@expo/vector-icons/Feather";
@@ -12,6 +12,8 @@ import Gradient from "~/components/custom/gradient";
 
 export default function Booking() {
     const { id } = useLocalSearchParams<{ id: string }>();
+
+    const router = useRouter();
 
     return (
         <>
@@ -120,6 +122,7 @@ export default function Booking() {
                                 <CustomPressable
                                     className="py-2 flex flex-row items-center justify-center"
                                     color="rgba(100, 100, 100, 0.4)"
+                                    onPress={() => router.navigate("/inbox")}
                                 >
                                     <View className="flex flex-row gap-2 items-center">
                                         <Feather name="mail" size={16} color="#4676c0" />
@@ -133,6 +136,7 @@ export default function Booking() {
                                 <CustomPressable
                                     className="py-2 flex flex-row items-center justify-center"
                                     color="rgba(100, 100, 100, 0.4)"
+                                    onPress={() => router.navigate("/inbox")}
                                 >
                                     <View className="flex flex-row gap-2 items-center">
                                         <Feather name="phone-call" size={14} color="#4676c0" />

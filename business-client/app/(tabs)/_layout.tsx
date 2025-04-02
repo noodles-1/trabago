@@ -72,6 +72,24 @@ export default function TabLayout() {
                     ),
                 }}
             />
+            <MaterialTopTabs.Screen
+                name="services"
+                options={{
+                    title: "Services",
+                    tabBarIcon: ({ color }) => (
+                        <Feather name="grid" size={24} color={color} />
+                    ),
+                }}
+            />
+            <MaterialTopTabs.Screen
+                name="inbox"
+                options={{
+                    title: "Inbox",
+                    tabBarIcon: ({ color }) => (
+                        <Feather name="mail" size={24} color={color} />
+                    ),
+                }}
+            />
         </MaterialTopTabs>
     );
 }
