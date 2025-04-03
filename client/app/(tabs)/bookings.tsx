@@ -44,14 +44,22 @@ export default function Bookings() {
                         </>
                     :
                         <>
-                            <Text className="text-lg font-bold"> Current bookings </Text>
+                            <Text className="text-lg font-bold">
+                                Current bookings
+                            </Text>
                             <View className="mt-2 flex flex-col gap-5 bg-white">
                                 <View className="rounded-lg border-[1px] border-gray-300 flex flex-row h-[80px]">
                                     <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
-                                    <View className="p-2 flex-1">
-                                        <Text className="font-bold"> Cleaning service </Text>
-                                        <Text> Worker is on the way... </Text>
-                                        <Text className="text-right font-bold"> ₱ 440 </Text>
+                                    <View className="p-3 flex-1">
+                                        <Text className="font-bold">
+                                            Cleaning service
+                                        </Text>
+                                        <Text className="text-gray-500">
+                                            Worker is on the way...
+                                        </Text>
+                                        <Text className="text-right font-bold">
+                                            ₱ 440
+                                        </Text>
                                     </View>
                                 </View>
                             </View>
@@ -68,17 +76,27 @@ export default function Bookings() {
                         </>
                     :
                         <>
-                            <Text className="text-lg font-bold"> Bookings this month </Text>
+                            <Text className="text-lg font-bold">
+                                Bookings this month
+                            </Text>
                             <View className="mt-2 flex flex-col gap-5">
                                 {bookings.map((booking, idx) => (
                                     <View key={idx} className="rounded-lg border-[1px] bg-white border-gray-300 flex flex-row h-[80px]">
                                         <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
-                                        <View className="p-2 flex-1">
-                                            <Text className="font-bold"> {booking.service} </Text>
-                                            <Text className="text-gray-500"> {booking.date} </Text>
+                                        <View className="p-3 flex-1">
+                                            <Text className="font-bold">
+                                                {booking.service}
+                                            </Text>
+                                            <Text className="text-gray-500">
+                                                {booking.date}
+                                            </Text>
                                             <View className="flex flex-row justify-between">
-                                                <Text className="text-gray-500"> {booking.time} </Text>
-                                                <Text className="font-bold"> ₱ {booking.price} </Text>
+                                                <Text className="text-gray-500">
+                                                    {booking.time}
+                                                </Text>
+                                                <Text className="font-bold">
+                                                    ₱ {booking.price}
+                                                </Text>
                                             </View>
                                         </View>
                                     </View>

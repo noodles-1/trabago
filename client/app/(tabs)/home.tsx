@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { Image, Pressable, ScrollView, Text, TextInput, View } from "react-native";
+import { Image, ScrollView, Text, TextInput, View } from "react-native";
 
 import { useRouter } from "expo-router";
-import { LinearGradient } from "expo-linear-gradient";
 
 import Feather from "@expo/vector-icons/Feather";
 import AntDesign from "@expo/vector-icons/AntDesign";
@@ -50,12 +49,16 @@ export default function Home() {
             <ScrollView className="flex-1">
                 <View className="flex flex-row items-center px-2 pt-10 pb-2">
                     <Image source={require("~/assets/images/trabago-logo.png")} className="h-12 w-12" />
-                    <Text className="text-2xl text-primary font-bold"> Home </Text>
+                    <Text className="text-2xl text-primary font-bold">
+                        Home
+                    </Text>
                 </View>
                 <Gradient 
                     className="p-6 bg-primary mx-4 my-1 flex flex-col gap-3"
                 >
-                    <Text className="text-white"> España Blvd, Sampaloc, Manila </Text>
+                    <Text className="text-white">
+                        España Blvd, Sampaloc, Manila
+                    </Text>
                     <View className="flex flex-row items-center bg-white px-4 py-2 gap-4 rounded-xl">
                         <Feather name="search" size={20} color="#666" />
                         <TextInput 
@@ -76,7 +79,9 @@ export default function Home() {
                     :
                         <>
                             <View className="flex flex-row items-center justify-between gap-4">
-                                <Text className="text-lg font-bold"> Ongoing bookings </Text>
+                                <Text className="text-lg font-bold">
+                                    Ongoing bookings
+                                </Text>
                                 <CustomPressable 
                                     className="rounded-full p-2" 
                                     onPress={() => router.navigate("/bookings")}
@@ -87,10 +92,16 @@ export default function Home() {
                             </View>
                             <View className="rounded-lg border-[1px] border-gray-300 flex flex-row h-[80px] my-2 w-[80%]">
                                 <View className="h-full w-[80px] bg-gray-300 rounded-tl-lg rounded-bl-lg" />
-                                <View className="p-2 flex-1">
-                                    <Text className="font-bold"> Cleaning service </Text>
-                                    <Text> Worker is on the way... </Text>
-                                    <Text className="text-right font-bold"> ₱440 </Text>
+                                <View className="p-3 flex-1">
+                                    <Text className="font-bold">
+                                        Cleaning service
+                                    </Text>
+                                    <Text className="text-gray-500">
+                                        Worker is on the way...
+                                    </Text>
+                                    <Text className="text-right font-bold">
+                                        ₱ 440
+                                    </Text>
                                 </View>
                             </View>
                         </>
@@ -98,7 +109,9 @@ export default function Home() {
                 </View>
                 <View className="m-4">
                     <View className="flex flex-row items-center justify-between gap-4">
-                        <Text className="text-lg font-bold"> Popular services </Text>
+                        <Text className="text-lg font-bold">
+                            Popular services
+                        </Text>
                         <CustomPressable 
                             className="rounded-full p-2" 
                             onPress={() => router.navigate("/services")}
@@ -128,7 +141,9 @@ export default function Home() {
                                         />
                                     </Gradient>
                                 </CustomPressable>
-                                <Text className="text-center mt-1"> {service.name} </Text>
+                                <Text className="text-center mt-1 text-sm">
+                                    {service.name}
+                                </Text>
                             </View>
                         ))}
                     </View>
@@ -142,7 +157,9 @@ export default function Home() {
                     :
                         <>
                             <View className="flex flex-row items-center justify-between gap-4">
-                                <Text className="text-lg font-bold"> Featured </Text>
+                                <Text className="text-lg font-bold">
+                                    Featured
+                                </Text>
                                 <CustomPressable 
                                     className="rounded-full p-2" 
                                     onPress={() => router.navigate("/services")}
@@ -153,7 +170,9 @@ export default function Home() {
                             </View>
                             <View className="mt-2 mb-10">
                                 <View className="rounded-lg w-[280px] h-[180px] bg-gray-300" />
-                                <Text className="mt-1 font-bold"> Promote your service/business here </Text>
+                                <Text className="mt-1">
+                                    Promote your service/business here
+                                </Text>
                             </View>
                         </>
                     }

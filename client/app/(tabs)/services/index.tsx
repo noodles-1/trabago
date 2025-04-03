@@ -1,7 +1,6 @@
-import { Image, Pressable, ScrollView, Text, View } from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 
 import { useRouter } from "expo-router";
-import { LinearGradient } from "expo-linear-gradient";
 
 import Header from "~/components/custom/header";
 import CustomPressable from "~/components/custom/pressable";
@@ -129,7 +128,9 @@ export default function Services() {
             <ScrollView className="flex-1 px-2">
                 {categories.map((category, i) => 
                     <View key={i} className="mt-4">
-                        <Text className="text-lg mx-2 font-bold"> {categoryNames[i]} </Text>
+                        <Text className="text-lg mx-2 font-bold">
+                            {categoryNames[i]}
+                        </Text>
                         <View className="flex flex-row flex-wrap">
                             {category.map((service, j) => (
                                 <View key={j} className="w-[25%] p-2">
@@ -151,7 +152,9 @@ export default function Services() {
                                             />
                                         </Gradient>
                                     </CustomPressable>
-                                    <Text className="text-center mt-1 text-sm"> {service.name} </Text>
+                                    <Text className="text-center mt-1 text-sm">
+                                        {service.name}
+                                    </Text>
                                 </View>
                             ))}
                         </View>
