@@ -82,15 +82,23 @@ export default function ServicesList() {
                                         >
                                             <View className="flex flex-col rounded-lg border-gray-400 border-[1px] bg-white">
                                                 <View className="bg-gray-300 h-[150px] rounded-t-lg w-full" />
-                                                <View className="p-2">
-                                                    <Text> Service #{idx + 1} </Text>
-                                                    <View className="mt-1 flex flex-row items-center justify-start">  
-                                                        <Text className="font-bold text-primary"> ₱ </Text>
-                                                        <Text className="text-lg font-bold text-primary left-[-7px]"> 550 </Text>
+                                                <View className="p-3 flex flex-col gap-2">
+                                                    <View>
+                                                        <Text>
+                                                            Service #{idx + 1}
+                                                        </Text>
+                                                        <View className="flex flex-row items-center gap-2">  
+                                                            <Text className="font-bold">
+                                                                ₱
+                                                            </Text>
+                                                            <Text className="text-xl font-bold left-[-7px]">
+                                                                {" "}550
+                                                            </Text>
+                                                        </View>
                                                     </View>
-                                                    <View className="mt-1 flex flex-row items-center justify-start">  
-                                                        <AntDesign name="star" size={14} color="#f4c948" />
-                                                        <Text className="text-sm"> 4.8 </Text>
+                                                    <View className="flex flex-row items-center justify-start gap-1">  
+                                                        <AntDesign name="star" size={12} color="#f4c948" />
+                                                        <Text className="text-sm text-gray-500"> 4.8 </Text>
                                                     </View>
                                                 </View>
                                             </View>
