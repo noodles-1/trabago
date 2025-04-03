@@ -36,7 +36,7 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#888",
+          "backgroundColor": "#fff",
           "image": "./assets/images/trabago-logo.png",
           "imageWidth": 100
         }
