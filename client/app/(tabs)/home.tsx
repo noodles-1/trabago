@@ -107,9 +107,9 @@ export default function Home() {
                         </>
                     }
                 </View>
-                <View className="m-4">
+                <View className="m-2">
                     <View className="flex flex-row items-center justify-between gap-4">
-                        <Text className="text-lg font-bold">
+                        <Text className="text-lg font-bold mx-2">
                             Popular services
                         </Text>
                         <CustomPressable 
@@ -120,9 +120,9 @@ export default function Home() {
                             <AntDesign name="right" size={16} color="#4676c0" />
                         </CustomPressable>
                     </View>
-                    <View className="flex flex-row justify-between mt-2">
+                    <View className="flex flex-row flex-wrap">
                         {services.map((service, idx) => (
-                            <View key={idx}>
+                            <View key={idx} className="w-[25%] p-2 flex flex-col items-center justify-center">
                                 <CustomPressable
                                     onPress={() => router.navigate({
                                         pathname: "/services/[service]",
@@ -133,11 +133,11 @@ export default function Home() {
                                     color="rgba(255, 255, 255, 0.3)"
                                 >
                                     <Gradient 
-                                        className="bg-primary p-6 flex flex-row justify-center items-center"
+                                        className="flex flex-row justify-center items-center"
                                     >
                                         <Image 
                                             source={service.icon} 
-                                            className="h-10 w-10" 
+                                            className="h-10 w-10 m-7" 
                                         />
                                     </Gradient>
                                 </CustomPressable>
