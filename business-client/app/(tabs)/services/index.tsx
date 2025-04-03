@@ -56,7 +56,7 @@ export default function Services() {
                         <Text className="text-lg mx-2 font-bold"> {categoryNames[i]} </Text>
                         <View className="flex flex-row flex-wrap">
                             {category.map((service, j) => (
-                                <View key={j} className="w-[25%] p-2">
+                                <View key={j} className="w-[25%] p-2 flex flex-col items-center justify-center">
                                     <CustomPressable
                                         onPress={() => router.navigate({
                                             pathname: "/services/[service]",
@@ -66,16 +66,18 @@ export default function Services() {
                                         })}
                                         color="rgba(255, 255, 255, 0.3)"
                                     >
-                                        <Gradient
-                                            className="bg-primary p-6 flex flex-row items-center justify-center"
+                                        <Gradient 
+                                            className="flex flex-row items-center justify-center"
                                         >
                                             <Image 
                                                 source={service.icon} 
-                                                className="h-10 w-10" 
+                                                className="h-10 w-10 m-7" 
                                             />
                                         </Gradient>
                                     </CustomPressable>
-                                    <Text className="text-center mt-1 text-sm"> {service.name} </Text>
+                                    <Text className="text-center mt-1 text-sm">
+                                        {service.name}
+                                    </Text>
                                 </View>
                             ))}
                         </View>
