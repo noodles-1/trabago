@@ -5,6 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 import AntDesign from "@expo/vector-icons/AntDesign";
 
+import { Separator } from "~/components/ui/separator";
 import BackButton from "~/components/custom/back-button";
 import Pill from "~/components/custom/pill";
 
@@ -24,16 +25,24 @@ export default function Service() {
                         ₱ 550 
                     </Text>
                     <View className="mt-1 flex flex-row items-center justify-start">  
-                        <AntDesign name="star" size={14} color="#f4c948" />
-                        <Text className="text-lg"> 4.8 / 5 </Text>
+                        <AntDesign name="star" size={12} color="#f4c948" />
+                        <Text className="text-md text-gray-500"> 4.8 / 5 </Text>
                     </View>
-                    <View className="flex flex-col gap-2 mt-8">
-                        <Text> 
-                            By:
-                            <Text className="font-bold"> Service Provider Name </Text>
-                        </Text>
+                    <Text className="text-lg font-bold mt-8"> 
+                        Service information
+                    </Text>
+                    <Separator className="my-4" />
+                    <View className="flex flex-col gap-2">
+                        <View className="flex flex-row gap-1">
+                            <Text className="text-gray-500"> 
+                                By:
+                            </Text>
+                            <Text className="font-bold">
+                                Service Provider Name
+                            </Text>
+                        </View>
                         <View>
-                            <Text>
+                            <Text className="text-gray-500">
                                 Service description:
                             </Text>
                             <Text>
@@ -41,7 +50,7 @@ export default function Service() {
                             </Text>
                         </View>
                         <View>
-                            <Text> 
+                            <Text className="text-gray-500"> 
                                 About us: 
                             </Text>
                             <Text>
@@ -49,10 +58,11 @@ export default function Service() {
                             </Text>
                         </View>
                     </View>
-                    <Text className="text-lg mt-8 font-bold"> 
+                    <Text className="text-lg font-bold mt-8"> 
                         Service ratings 
                     </Text>
-                    <View className="my-4 flex flex-row gap-2 flex-wrap">
+                    <Separator className="my-4" />
+                    <View className="flex flex-row gap-2 flex-wrap">
                         <Pill text="5 stars" />
                         <Pill text="4 stars" />
                         <Pill text="3 stars" />
