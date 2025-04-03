@@ -4,7 +4,7 @@ import { Image, ScrollView, Text, View } from "react-native";
 import { useRouter } from "expo-router";
 
 import AntDesign from "@expo/vector-icons/AntDesign";
-import { BanknoteIcon } from "lucide-react-native";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 import { Skeleton } from "~/components/ui/skeleton";
 import CustomPressable from "~/components/custom/pressable";
@@ -51,7 +51,7 @@ export default function Home() {
                                 className="py-3 px-4 flex flex-row gap-2"
                                 color="rgba(100, 100, 100, 0.4)"
                             >
-                                <BanknoteIcon size={18} color="#4676c0" />
+                                <MaterialCommunityIcons name="cash-minus" size={18} color="#4676c0" />
                                 <Text className="font-black text-primary text-sm tracking-wider">
                                     Cash Out
                                 </Text>
