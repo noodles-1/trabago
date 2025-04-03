@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "business-client",
-    "slug": "business-client",
+    "name": "Traba-GO Partner",
+    "slug": "trabago-partner-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/trabago-partner-icon.png",
@@ -21,10 +21,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/trabago-partner-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.chowlong.businessclient"
+      "package": "com.trabago.partner"
     },
     "web": {
       "bundler": "metro",
@@ -36,7 +36,7 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#fff",
+          "backgroundColor": "#ffffff",
           "image": "./assets/images/trabago-logo.png",
           "imageWidth": 100
         }
@@ -50,7 +50,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "aafe2646-b914-4c5a-99ac-1f8c18a3c5a6"
+        "projectId": "e068cd9c-1dbb-4d13-bcd8-8bc4208dfc10"
       }
     }
   }
